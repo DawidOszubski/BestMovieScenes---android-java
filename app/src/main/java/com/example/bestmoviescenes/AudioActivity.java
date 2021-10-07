@@ -52,19 +52,17 @@ public class AudioActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        if(intent != null){
+        if(intent.getExtras() != null){
             index = Integer.parseInt(intent.getStringExtra("ClickedIndex"));
         }
         switch (index){
             case 0:
                  characterImg = new int[]{R.drawable.osiol, R.drawable.shrek_icon, R.drawable.osiol2, R.drawable.adas,R.drawable.osiol, R.drawable.adas, R.drawable.adas, R.drawable.adas,};
-                 audioText = new String[]{"to mój ogon jest, urwiesz mi i cossssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", "z dwojga złego lepiej tą stroną", "niebieski kwiat i kolce", "ble ble","to mój ogon jest, bo mi urwiesz", "jakis inny text", "Dawid to przekozak", "ble ble"};
-                 //linearLayout.setBackgroundResource(R.drawable.shrek_background);
+                 audioText = new String[]{"to mój ogon jest, urwiesz mi i co", "z dwojga złego lepiej tą stroną", "niebieski kwiat i kolce", "ble ble","to mój ogon jest, bo mi urwiesz", "jakis inny text", "Dawid to przekozak", "ble ble"};
                  break;
             case 1:
                  characterImg = new int[]{R.drawable.adas, R.drawable.adas, R.drawable.adas, R.drawable.adas,};
                  audioText = new String[]{"gdzie ten mały", "bleeeeeeeeeeee", "Dawid to przekozak", "ble ble"};
-                //linearLayout.setBackgroundResource(R.drawable.shrek2_background);
                  break;
             case 2:
                 characterImg = new int[]{R.drawable.adas, R.drawable.adas, R.drawable.adas, R.drawable.adas,};
@@ -103,7 +101,6 @@ public class AudioActivity extends AppCompatActivity {
                         .replaceAll("ó+", "o").replaceAll("ł+", "l").replaceAll("ą+", "a").replaceAll("ć+", "c")
                         .replaceAll("ń+", "n").replaceAll("ś+", "s").replaceAll("ź+", "z").replaceAll("ż+", "z")
                         .replaceAll("ę+", "e").toLowerCase();
-                //Toast.makeText(AudioActivity.this, "Text: "+ audioTitle, Toast.LENGTH_LONG).show();
                 videoView.requestFocus();
                 playMp4(audioTitle);
                 videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
@@ -122,15 +119,6 @@ public class AudioActivity extends AppCompatActivity {
 
     }
 
-    public void myClickHandler(View v)
-    {
-
-
-        LinearLayout vwParentRow = (LinearLayout)v.getParent();
-
-        Button btnChild = (Button)vwParentRow.getChildAt(1);
-
-    }
 
    @Override
     public void onStop() {

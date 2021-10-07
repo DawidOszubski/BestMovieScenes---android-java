@@ -1,25 +1,17 @@
 package com.example.bestmoviescenes;
 
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import java.util.ArrayList;
 
 public class ListAdapterAudio extends ArrayAdapter<Audio> {
@@ -55,13 +47,9 @@ public class ListAdapterAudio extends ArrayAdapter<Audio> {
             }
         });
 
-
         characterImg.setImageResource(audio.characterImg);
         audioText.setText(audio.audioText);
 
         return convertView;
     }
-
-
-
 }
