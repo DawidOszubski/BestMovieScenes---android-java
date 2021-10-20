@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#000000">
+    android:layout_height="match_parent">
 
 
 
@@ -55,16 +54,19 @@
                     android:id="@+id/audioTitle"
                     android:layout_width="0dp"
                     android:layout_height="70dp"
-                  android:gravity="center_vertical"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="5dp"
-                    android:text="Pedał"
-                    android:textColor="#241571"
+                    android:autoSizeMaxTextSize="18sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="serif"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/favouriteButton"
                     app:layout_constraintStart_toEndOf="@id/characterImg"
-                    app:layout_constraintEnd_toStartOf="@id/favouriteButton"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

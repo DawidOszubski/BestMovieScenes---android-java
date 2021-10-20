@@ -8,64 +8,70 @@
     tools:context=".MainActivity"
     android:configChanges="keyboardHidden|orientation|screenSize"
     android:screenOrientation="portrait"
+    android:background="@color/colorPrimary"
     >
 
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
         android:dividerHeight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-android:background="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
         tools:listitem="@layout/list_item" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:elevation="4dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/search_bar"
-            android:layout_width="250dp"
-            android:layout_height="match_parent"
-            android:layout_marginVertical="10dp"
-            android:hint=" Szukaj filmu...."
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/listview"
-            android:background="@drawable/rounded_button"
-            android:drawableLeft="@android:drawable/ic_menu_search"
-            android:textColorHint="#fff"
-            android:textSize="16sp"
-            android:textColor="#fff"
-            android:layout_marginLeft="20dp"
-            android:inputType="text"/>
+            <EditText
+                android:id="@+id/search_bar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="4"
+                android:background="@drawable/rounded_button"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:hint=" Szukaj filmu...."
+                android:inputType="text"
+                android:maxWidth="250dp"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/listview"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/ic_icon_heart_foreground"
-            android:gravity="center"
-            android:layout_marginLeft="20dp"/>
-
+            <Button
+                android:id="@+id/favouriteActivity"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_icon_heart_foreground"
+                android:maxWidth="30dp"
+                android:maxHeight="30dp"
+                android:onClick="favaouriteView" />
+        </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <android.inputmethodservice.KeyboardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

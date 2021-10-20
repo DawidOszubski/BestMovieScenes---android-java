@@ -1,6 +1,5 @@
 package com.example.bestmoviescenes;
 
-import java.util.ArrayList;
 
 public class Movie {
 

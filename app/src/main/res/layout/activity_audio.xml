@@ -1,39 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:configChanges="keyboardHidden|orientation|screenSize"
-    android:drawable="@android:color/tertiary_text_light"
     android:orientation="horizontal"
     android:screenOrientation="portrait"
-    tools:context=".AudioActivity">
+    android:background="@drawable/background">
 
+
+
+    <ListView
+        android:id="@+id/listviewAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:divider="@null"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar_viedo"
+        tools:listitem="@layout/list_audio"
+        android:paddingBottom="?attr/actionBarSize"
+        android:layout_weight="0"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar_viedo"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_weight="0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/search_bar_viedo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="4"
+                android:background="@drawable/rounded_button"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:hint=" Szukaj filmu...."
+                android:inputType="text"
+                android:maxWidth="250dp"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:focusedByDefault="false"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/listview"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
 
     <VideoView
         android:id="@+id/videoView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone" />
-
-    <ListView
-        android:id="@+id/listviewAudio"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:focusable="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/list_audio"
-        android:divider="@null"
-        android:clickable="true"
-        android:focusable="true">
+        android:layout_weight="1"/>
 
 
-    </ListView>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
